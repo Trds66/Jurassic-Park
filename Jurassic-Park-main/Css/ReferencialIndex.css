@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('./Jurassic-Park-main/Imagens/fundo.jpg');
+    background-image: url('../Imagens/Imagem_Fundo_JurassicPark.jpg');
     background-size: cover;
     background-position: center;
     color: #000000;
