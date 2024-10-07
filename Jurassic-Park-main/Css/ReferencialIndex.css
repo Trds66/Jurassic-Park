@@ -1,34 +1,65 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-image: url('../Imagens/Imagem_Fundo_JurassicPark.jpg');
-    background-size: cover;
-    background-position: center;
-    color: #000000;
+:root {
+    --cor-vermelha: #ff6969;
+    --cor-amarela: #ecd713;
+    --cor-preta: #000000;
+    --cor-branca: #ffffff;
+    --cor-cinza-claro: #f5f5f5;
+    --cor-cinza-escuro: #444444;
 }
 
 header {
-    text-align: center; 
-    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 28px;
     background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
+    background-image: url('../Imagens/jp_topoFundo.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 80px;
+}
+
+.logo {
+    position: absolute;
+    left: 20px;
+    max-width: 150px;
+}
+
+.nav-container {
+    background-image: url('../Imagens/jp_menuFundo.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    border: 2px solid var(--cor-branca);
 }
 
 nav {
-    text-align: center;
-    margin: 10px 0;
+    display: flex;
+    justify-content: center;
 }
 
 nav a {
     margin: 0 15px;
     text-decoration: none;
-    color: #003cff;
+    color: var(--cor-branca);
     font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 nav a:hover {
     text-decoration: underline;
+    color: var(--cor-vermelha);
+    transform: scale(1.1);
+}
+
+body {
+    background-image: url('../Imagens/Imagem_Fundo_JurassicPark.jpg'); 
+    background-size: cover;
+    background-position: center;
+    color: var(--cor-preta);
 }
 
 article {
@@ -38,22 +69,73 @@ article {
     padding: 20px;
 }
 
+.flex-section {
+    margin-bottom: 40px;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+}
+
+.flex-container img {
+    max-width: 150px;
+    margin: 0 20px;
+}
+
+.flex-container div {
+    flex: 1;
+}
+
 section {
     margin-bottom: 40px;
 }
 
 footer {
     text-align: center;
-    padding: 20px;
-    background: #f1f1f1;
-    border-top: 2px solid #4CAF50;
+    padding: 10px;
+    background-color: rgba(241, 241, 241, 0.8);
+    background-image: url('../Imagens/jp_topoFundo.jpg');
+    background-size: cover;
+    background-position: center;
+    border-top: 2px solid var(--cor-preta);
+    color: var(--cor-branca);
+    font-size: 20px;
 }
 
 h1, h2 {
     font-size: 24px;
-    color: #000000;
+    color: var(--cor-preta);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     margin: 10px 0;
+}
+
+h1 {
+    text-align: center;
+    color: var(--cor-branca);
+    background-image: url('../Imagens/fundoVermelho.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 10px 0;
+    font-size: 36px;
+}
+
+h2 {
+    margin: 0;
+}
+
+#premios h2 {
+    text-align: center;
+    font-size: 28px;
+    color: var(--cor-branca);
+    background-color: #520404;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid var(--cor-vermelha);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin-bottom: 20px;
 }
 
 table {
@@ -63,24 +145,64 @@ table {
 }
 
 th, td {
-    padding: 12px;
+    padding: 10px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
 }
 
 th {
     background-color: #520404;
-    color: white; 
+    color: var(--cor-branca); 
 }
 
 tr:hover {
-    background-color: #f5f5f5; 
+    background-color: var(--cor-cinza-claro); 
 }
 
 tbody tr:nth-child(even) {
-    background-color: #f9f9f9; 
+    background-color: var(--cor-amarela);
 }
 
 tbody tr:nth-child(odd) {
-    background-color: #ffffff; 
+    background-color: #a8a8a8;
+}
+
+thead {
+    background-color: #ccc;
+}
+
+.background-gray {
+    background-color: var(--cor-cinza-escuro);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.background-gray h2,
+.background-gray p {
+    color: var(--cor-branca);
+}
+
+.alinhamento-direita {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 40px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    margin: 10px 0;
+}
+
+.imagem-borda {
+    border-width: 5px; 
+    border-style: solid; 
+}
+
+.primeira-imagem, .terceira-imagem {
+    border-color: var(--cor-vermelha);
+}
+
+.segunda-imagem, .quarta-imagem {
+    border-color: var(--cor-amarela);
 }
