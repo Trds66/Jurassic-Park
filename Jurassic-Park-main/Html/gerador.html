@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criador de Dinossauro</title>
+    <link rel="stylesheet" href="../Css/ReferencialGerador.css">
+</head>
+<body>
+    <header>
+        <img class="logo" src="../Imagens/jp_topoLogotipo.png" alt="Logotipo Jurassic Park">
+        <div class="nav-container">
+            <nav>
+                <a href="/index.html">VOLTAR PARA A PÁGINA PRINCIPAL</a>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <section id="criador-dinossauro">
+            <h1>Criador de Dinossauro</h1>
+            <form id="dinossauro-form">
+                <label for="primeira-silaba-nome">Primeira sílaba do nome:</label>
+                <input type="text" id="primeira-silaba-nome" name="primeira-silaba-nome" required>
+                
+                <label for="ultima-silaba-nome">Última sílaba do nome:</label>
+                <input type="text" id="ultima-silaba-nome" name="ultima-silaba-nome" required>
+                
+                <label for="primeira-silaba-sobrenome">Primeira sílaba do sobrenome:</label>
+                <input type="text" id="primeira-silaba-sobrenome" name="primeira-silaba-sobrenome" required>
+                
+                <label for="ultima-silaba-sobrenome">Última sílaba do sobrenome:</label>
+                <input type="text" id="ultima-silaba-sobrenome" name="ultima-silaba-sobrenome" required>
+                
+                <button type="button" id="gerar-nome">Gerar Nome</button>
+            </form>
+            <p id="mensagem" style="color: red; display: none;"></p>
+            <p id="nome-dinossauro" style="font-weight: bold;"></p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>JURASSIC PAGE - O seu canal de informações sobre Jurassic Park</p>
+    </footer>
+
+    <script>
+        document.getElementById("gerar-nome").addEventListener("click", function () {
+            const primeiraSilabaNome = document.getElementById("primeira-silaba-nome").value.trim();
+            const ultimaSilabaNome = document.getElementById("ultima-silaba-nome").value.trim();
+            const primeiraSilabaSobrenome = document.getElementById("primeira-silaba-sobrenome").value.trim();
+            const ultimaSilabaSobrenome = document.getElementById("ultima-silaba-sobrenome").value.trim();
+            const mensagem = document.getElementById("mensagem");
+            const nomeDinossauro = document.getElementById("nome-dinossauro");
+            
+            if (!primeiraSilabaNome || !ultimaSilabaNome || !primeiraSilabaSobrenome || !ultimaSilabaSobrenome) {
+                mensagem.style.display = "block";
+                mensagem.textContent = "Por favor, preencha todos os campos!";
+                nomeDinossauro.textContent = "";
+                return;
+            }
+            
+            const confirmar = confirm("Você deseja gerar o nome do dinossauro?");
+            if (!confirmar) {
+                return;
+            }
+            
+            const nome = `${primeiraSilabaNome}${ultimaSilabaSobrenome}${primeiraSilabaSobrenome}${ultimaSilabaNome}ssauro`;
+            mensagem.style.display = "none";
+            nomeDinossauro.textContent = `O nome do dinossauro é: ${nome}`;
+        });
+    </script>
+</body>
+</html>
